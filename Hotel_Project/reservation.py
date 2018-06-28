@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-hotels_list=[]
+hotels_list=[[465,'gag',8],[475,'geg',33],[785,'gzg',44]]
 customers_list=[]
 reservation_list=[]
 
@@ -24,28 +24,27 @@ def add_customer(customer_name):
 
 def reserve_room (hotel_name, customer_name):
     for hotels in hotels_list:
-    	if hotels[1]==hotel_name:
-    		return True
-    		if hotels[-1]>0:
-    			hotels[-1]=hotels[-1]-1
+    	if hotels_list[hotels_list.index(hotels)][1]==hotel_name:
+    		if hotels_list[hotels_list.index(hotels)][-1]>0:
+    			hotels_list[hotels_list.index(hotels)][-1]=(hotels_list[hotels_list.index(hotels)][-1])-1
     			return True,customer_name
     		else:
     			return False
-    	else:
-    		print "there is not hotel with the name :"+hotel_name
+    			print "No rooms available on the hotel : "+hotel_name
+    print "there is not hotel with the name :"+hotel_name
+    return False
+    		
 
 
 
 
 def add_new_reservation(hotel_name, customer_name):
-    if reserve_room(hotel_name, customer_name) == True:
-    	if reserve_room(hotel_name, customer_name)[0] == True:
-    		reservation_list.append(hotel_name,customer_name)
-    		print "reservation success !"
-    	else:
-    		print 'sorry no rooms available'
+    if reserve_room(hotel_name, customer_name)[0] == True:
+    	reservation_list.append(hotel_name,customer_name)
+    	print "reservation success !"
     else:
     	print 'sorry no rooms available'
+
 
 
 
