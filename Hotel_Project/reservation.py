@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from twilio.rest import Client
+
+
 hotels_list=[[465,'gag',8],[475,'geg',33],[785,'gzg',44]]
 customers_list=[]
 reservation_list=[]
@@ -16,8 +19,8 @@ def add_hotel(number,hotel_name, city,total_rooms,empty_rooms):
 
 
 
-def add_customer(customer_name):
-    customers_list.append(customer_name)
+def add_customer(customer_name,number):
+    customers_list.append(customer_name,number)
     print 'added new customer with the name : '+ customer_name 
 
 
@@ -34,8 +37,6 @@ def reserve_room (hotel_name, customer_name):
     print "there is not hotel with the name :"+hotel_name
     return False
     		
-
-
 
 
 def add_new_reservation(hotel_name, customer_name):
@@ -60,6 +61,25 @@ def list_hotels_in_city(city_name):
 		if hotel[2] == city_name:
 			print "Hotel Name : "+hotel[1]+" Total of rooms : "+hotel[3]
 
+
+
+def send_text_message(message, number):
+	# Your Account SID from twilio.com/console
+	account_sid = "ACd4029af67b7ed2c9054b626adc9c3de6"
+	# Your Auth Token from twilio.com/console
+	auth_token  = "cd2b9103da306b498367adef27fb5d87"
+
+	client = Client(account_sid, auth_token)
+
+	message = client.messages.create(
+    	to= "+"+str(number), 
+    	from_="+12692154193",
+    	body= message)
 	
+	return "message succesfully sended"
+
+		
+
+
 
 
