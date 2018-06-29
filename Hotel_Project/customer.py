@@ -1,8 +1,9 @@
-"""
-customer.py
-this is the customer class file
-"""
 # -*- coding: utf-8 -*-
+####################################
+#customer.py                       #
+#this is the customer class file   #
+####################################
+
 
 class Customer():
 	customers = []

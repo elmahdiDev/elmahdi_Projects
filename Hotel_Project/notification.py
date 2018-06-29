@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*- 
-
+# -*- coding: utf-8 -*-
 ########
 #     notification.py
 #     this is the notification class file
