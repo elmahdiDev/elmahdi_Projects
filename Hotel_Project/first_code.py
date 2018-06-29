@@ -32,8 +32,9 @@ def reserve_room (hotel_name, customer_name):
     			hotels_list[hotels_list.index(hotels)][-1]=(hotels_list[hotels_list.index(hotels)][-1])-1
     			return True,customer_name
     		else:
+                print "No rooms available on the hotel : "+hotel_name
     			return False
-    			print "No rooms available on the hotel : "+hotel_name
+    			
     print "there is not hotel with the name :"+hotel_name
     return False
     		

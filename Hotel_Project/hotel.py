@@ -5,7 +5,7 @@
 # “””    
 
 
-class Hotel():
+class Hotel(): 
     hotels = []
     def __init__(self, number,hotel_name, city,total_rooms,empty_rooms):
         self.number = number
@@ -18,8 +18,7 @@ class Hotel():
         self.empty_rooms])
 
     def list_hotels_in_city(self, city):
-        # search inside Hotel.hotels for hotels in a ‘city’
-        for hotel in hotels:
+        for hotel in Hotel.hotels:
             if hotels[hotels.index(hotel)][2] == city:
                 print "Hotel Name : "+hotels[hotels.index(hotel)][1]+" /n Total of rooms : "+hotels[hotels.index(hotel)][3]
 

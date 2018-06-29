@@ -4,6 +4,7 @@
 #     notification.py
 #     this is the notification class file
 ########
+from twilio.rest import Client
 
 class Notification():
 	def __inti__(self,number,message):
