@@ -5,10 +5,28 @@
 ##################################
 
 from hotel import Hotel
+from reservation import Reservation
+from notification import Notification
+from customer import Customer
 
 
-def start_app():
-    rotana_hotel = Hotel(20,'Rotana','Abu Dhabi',200,40)
-    sheraton_hotel = Hotel(21,'Sheraton','Abu Dhabi',300,100)
-    print Hotel.hotels
-start_app()
+def add_hotel(number,name,city,total_rooms,empty_rooms):
+    hotel_name = name
+    hotel_name = Hotel(number,name,city,total_rooms,empty_rooms)
+    print 'we added these hotels informations : '+ str(Hotel.hotels)
+
+def check_and_reserve_room(hotel_name,customer,check_in,check_out):
+	Reservation(hotel_name,customer,check_in,check_out)
+
+def check_hotel_reservations(hotel_name):
+	Reservation.list_reservations_for_hotel(hotel_name)
+
+def send_sms(number,message):
+	Notification(number,message)
+
+def add_customer(number,customer_name):
+	Customer(number,customer_name)
+
+def list_all_customers():
+	Customer.list_customers()
+

@@ -6,7 +6,7 @@
 from twilio.rest import Client
 
 class Notification():
-	def __inti__(self,number,message):
+	def __init__(self,number,message):
 		self.number = number
 		self.message = message
 		# Your Account SID from twilio.com/console
@@ -17,8 +17,8 @@ class Notification():
 		client = Client(account_sid, auth_token)
 
 		message = client.messages.create(
-	    	to= "+"+str(number), 
+	    	to= str(number), 
 	    	from_="+12692154193",
 	    	body= message)
 
-		return "message succesfully sended"
+		print "message succesfully sended"

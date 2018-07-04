@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 from hotel import Hotel
+from customer import Customer
 
 class Reservation():
-    reservations = [['fff','cos']]
-    def __init__ (self,hotel_name, customer_name):
+    reservations = []
+    def __init__ (self,hotel_name, customer_name,check_in,check_out):
         self.hotel_name = hotel_name
         self.customer_name = customer_name
 
@@ -11,20 +12,30 @@ class Reservation():
             if Hotel.hotels[Hotel.hotels.index(hotels)][1]==hotel_name:
                 if Hotel.hotels[Hotel.hotels.index(hotels)][-1]>0:
                     Hotel.hotels[Hotel.hotels.index(hotels)][-1]=(Hotel.hotels[Hotel.hotels.index(hotels)][-1])-1
-                    add_new_reservation(hotel_name,customer_name)
+                    self.add_new_reservation(hotel_name,customer_name,check_in,check_out)
                 else:
                     print "No rooms available on the hotel : "+hotel_name
-        print "there is not hotel with the name :"+hotel_name
-        
-    def add_new_reservation(hotel_name, customer_name):
-        reservations.append(hotel_name,customer_name)
-        print "reservation success !"
+            else:
+                print "there is not a hotel with the name :"+hotel_name
+    
+   
+    def add_new_reservation(self,hotel_name, customer_name,check_in,check_out):
+        i = 0
+        while i < len(Customer.customers): 
+            if Customer.customers[i][1] == customer_name:
+                self.reservations.append([hotel_name,customer_name,check_in,check_out])
+                print "reservation success !You reserved a room on the hotel : "+hotel_name
+                i += 1
+                return True
+        if self.add_new_reservation != True:
+            print "You are not registred! Please register before you reserve !"
 
-    def list_resevrations_for_hotel(hotel_name):
-        for reserve_info in reservations:
-            if reservations[reservations.index(reserve_info)][0] == hotel_name:
-                print reservations[reservations.index(reserve_info)][1]
-                return reservations[reservations.index(reserve_info)][1]
+    
+    @classmethod
+    def list_reservations_for_hotel(self,hotel_name):
+        for reserve_info in self.reservations:
+            if self.reservations[self.reservations.index(reserve_info)][0] == hotel_name:
+                print 'Costumer name : '+str(self.reservations[self.reservations.index(reserve_info)][1])+' <<<|>>> Hotel name : '+str(self.reservations[self.reservations.index(reserve_info)][0])
 
 
 
