@@ -10,6 +10,19 @@ from reservation import Reservation
 from notification import Notification
 from hotel import Hotel
 
+#add customer
+print '#add customer'
+main.add_customer('+25555555','dddfff')
+main.add_customer('+2555545','elmahdi')
+main.add_customer('+25444455','dddf')
+
+print "<<--------------------------------------->>" 
+
+#list all customers
+print'#list all customers'
+main.list_all_customers()
+
+print "<<--------------------------------------->>" 
 
 #adding hotel
 print '#adding hotel'
@@ -38,14 +51,3 @@ print '#send phone message '
 
 print "<<--------------------------------------->>" 
 
-#add customer
-print '#add customer'
-main.add_customer('+25555555','dddfff')
-main.add_customer('+2555545','elmahdi')
-main.add_customer('+25444455','dddf')
-
-print "<<--------------------------------------->>" 
-
-#list all customers
-print'#list all customers'
-main.list_all_customers()

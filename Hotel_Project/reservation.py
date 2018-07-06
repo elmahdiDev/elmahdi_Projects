@@ -25,8 +25,8 @@ class Reservation():
             if Customer.customers[i][1] == customer_name:
                 self.reservations.append([hotel_name,customer_name,check_in,check_out])
                 print "reservation success !You reserved a room on the hotel : "+hotel_name
-                i += 1
                 return True
+            i += 1
         if self.add_new_reservation != True:
             print "You are not registred! Please register before you reserve !"
 
