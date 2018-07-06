@@ -35,7 +35,7 @@ class Reservation():
     def list_reservations_for_hotel(self,hotel_name):
         for reserve_info in self.reservations:
             if self.reservations[self.reservations.index(reserve_info)][0] == hotel_name:
-                print 'Costumer name : '+str(self.reservations[self.reservations.index(reserve_info)][1])+' <<<|>>> Hotel name : '+str(self.reservations[self.reservations.index(reserve_info)][0])
+                print 'Costumer name : '+str(self.reservations[self.reservations.index(reserve_info)][1])+' <<<|>>> Hotel name : '+str(self.reservations[self.reservations.index(reserve_info)][0])+" <<<|>>>  from : "+str(self.reservations[self.reservations.index(reserve_info)][2]) +" To : "+str(self.reservations[self.reservations.index(reserve_info)][3])
 
 
 
