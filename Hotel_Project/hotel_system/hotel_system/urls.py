@@ -16,14 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from .views import *
-from controllers.main import *
+from .controllers.main import *
+from .controllers.tester import *
+
+execute() 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'all_hotels',list_all_hotels),
-    url(r'',Welcome),
-    url(r"all_customers", main.list_all_customers),
-    url(r"all_reservations", main.list_hotel_reservations),
-    url(r"hotel_in_city", main.list_hotel_in_city),
+    url(r'^all_hotels/',list_all_hotels),
+    url(r'^welcome/',Welcome),
+    url(r'^all_customers/', list_all_customers),
+    url(r'^all_reservations/', list_hotel_reservations),
+    url(r'^hotel_in_city/', list_hotel_in_city),
 
 ]

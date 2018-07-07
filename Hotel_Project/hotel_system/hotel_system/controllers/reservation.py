@@ -8,10 +8,10 @@ class Reservation():
         self.hotel_name = hotel_name
         self.customer_name = customer_name
 
-        for hotels in Hotel.hotels:
-            if Hotel.hotels[Hotel.hotels.index(hotels)][1]==hotel_name:
-                if Hotel.hotels[Hotel.hotels.index(hotels)][-1]>0:
-                    Hotel.hotels[Hotel.hotels.index(hotels)][-1]=(Hotel.hotels[Hotel.hotels.index(hotels)][-1])-1
+        for h in Hotel.hotels:
+            if Hotel.hotels[Hotel.hotels.index(h)][1]==hotel_name:
+                if Hotel.hotels[Hotel.hotels.index(h)][-1]>0:
+                    Hotel.hotels[Hotel.hotels.index(h)][-1]=(Hotel.hotels[Hotel.hotels.index(h)][-1])-1
                     self.add_new_reservation(hotel_name,customer_name,check_in,check_out)
                 else:
                     print "No rooms available on the hotel : "+hotel_name
