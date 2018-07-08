@@ -7,7 +7,6 @@ class Reservation():
     def __init__ (self,hotel_name, customer_name,check_in,check_out):
         self.hotel_name = hotel_name
         self.customer_name = customer_name
-
         for h in Hotel.hotels:
             if Hotel.hotels[Hotel.hotels.index(h)][1]==hotel_name:
                 if Hotel.hotels[Hotel.hotels.index(h)][-1]>0:
