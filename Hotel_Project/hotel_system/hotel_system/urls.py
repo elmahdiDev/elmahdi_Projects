@@ -23,10 +23,10 @@ execute()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^all_hotels/',list_all_hotels),
-    url(r'^all_customers/', list_all_customers),
-    url(r'^all_reservations/', list_hotel_reservations),
-    url(r'^hotel_in_city/', list_hotel_in_city),
-    url(r'^$',Welcome),
+    url(r'^allhotels',list_all_hotels),
+    url(r'^allcustomers', list_all_customers),
+    url(r'^allreservations', list_hotel_reservations),
+    url(r'^hotelincity', list_hotel_in_city),
+    url(r'^',Welcome),
 
 ]

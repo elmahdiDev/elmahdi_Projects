@@ -16,14 +16,16 @@ def execute():
     main.add_customer('+25555555','meryem')
     main.add_customer('+2555545','elmahdi')
     main.add_customer('+25444455','yassin')
+    main.add_customer('+254445','omar')
+    main.add_customer('+2544455','mohammed')
 
 
 
     #adding hotel
     print '#adding hotel'
-    main.add_hotel(88,'figuig','oujda',200,10)
-    main.add_hotel(88,'oujda','oujda',200,10)
-    main.add_hotel(88,'casa','oujda',200,10)
+    main.add_hotel(88,'figuig','city',200,10)
+    main.add_hotel(88,'oujda','city',200,10)
+    main.add_hotel(88,'casa','city',200,10)
 
 
 
@@ -32,6 +34,10 @@ def execute():
     main.check_and_reserve_room('oujda','meryem','2/5/17','2/5/17')
     main.check_and_reserve_room('casa','yassin','2/5/17','2/5/17')
     main.check_and_reserve_room('figuig','omar','2/5/17','2/5/17')
+    main.check_and_reserve_room('figuig','mohammed','2/5/17','2/5/17')
+
+
+    print Reservation.reservations
 
 
 

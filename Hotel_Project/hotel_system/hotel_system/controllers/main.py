@@ -45,15 +45,16 @@ def list_all_hotels(request):
 def list_hotel_in_city(request):
     hotels_list_output= '<ul style="width:auto;height:auto;background-color:lightgrey;borber-radius:6px;font-size:20px;padding:30px;">'
     for h in Hotel.hotels:
-        if Hotel.hotels[Hotel.hotels.index(h)][2]=="figuig":
+        if Hotel.hotels[Hotel.hotels.index(h)][2]=="city":
             hotels_list_output += "<li>"+str(Hotel.hotels[Hotel.hotels.index(h)][1])+"</li>"
     hotels_list_output += "</ul>"
     return HttpResponse(hotels_list_output)
 
 def list_hotel_reservations(request):
     reservations_list_output= '<ul style="width:auto;height:auto;background-color:lightgrey;borber-radius:6px;font-size:20px;padding:30px;">'
+    reservations_list_output += "<li style='font-size:30px'>"+"Figuig Reservations"+"</li>"
     for reserve_info in Reservation.reservations:
-        if Reservation.reservations[Reservation.reservations.index(reserve_info)][0] == "figuig":
+        if Reservation.reservations[Reservation.reservations.index(reserve_info)][0] == 'figuig':
             reservations_list_output += "<li>"+str(Reservation.reservations[Reservation.reservations.index(reserve_info)])+"</li>"
     reservations_list_output += "</ul>"
     return HttpResponse(reservations_list_output)
