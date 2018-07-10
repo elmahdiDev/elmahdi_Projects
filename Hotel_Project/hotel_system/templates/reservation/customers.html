@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Customers
+{% endblock %}
+
+{% block content %}
+<h3 style="border:0.5px rgb(175, 174, 174) solid; color: lightgray;width: 464px;text-align: center">Our Customers</h3>
+<table class="table table-striped">
+        <thead>
+          <tr style="width:500px;height:auto;background-color:rgb(206, 187, 187);border-top: grey 0.5px solid;border-bottom: grey 2px solid;border-radius:15px;font-size:20px;">
+            <th style="padding-left: 205px;padding-right: 205px;">Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            {% for cus in customers %}
+            <tr style="width:auto;height:auto;background-color:rgb(226, 196, 196);font-size:20px;">
+              <td style="padding-top:5px;padding-bottom:5px;border-top: rgb(175, 174, 174) 0.5px solid;border-bottom: rgb(175, 174, 174) 0.5px solid;text-align: center;"> {{cus.customer_name}} </td>
+            </tr>
+            {% endfor %}
+          
+        </tbody>
+      </table>
+{% endblock %}

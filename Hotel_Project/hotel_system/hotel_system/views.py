@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 
-def HelloWorld(request):
-    return HttpResponse('hello world')
+
+from django.shortcuts import render
 
 def Welcome(request):
-    return HttpResponse('Welcome to my first django page')
-
+    return render(request, "welcome.html")
+    
