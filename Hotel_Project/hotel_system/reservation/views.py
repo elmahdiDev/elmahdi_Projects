@@ -35,3 +35,6 @@ def AllReservations(request):
     # reservationlist += '</ul>'
     # return HttpResponse(reservationlist)
     return render(request,"reservation/reservations.html",{'reservations':Reservation.objects.all()})
+
+def RecentReservations(request):
+    return render(request, "reservation/reservations.html",{'recentreservation': Reservation.objects.all().reverse()[:5]})

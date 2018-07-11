@@ -12,6 +12,9 @@
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
         <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+        {% block script %}
+        {% endblock %}
     </head>
     <body>
 
@@ -39,8 +42,8 @@
                 {% endblock %}
                 </article>
                 <aside>
-                    <h3>aside</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+                    {% block recentreservations %}
+                    {% endblock %}
                 </aside>
 
             </div> <!-- #main -->

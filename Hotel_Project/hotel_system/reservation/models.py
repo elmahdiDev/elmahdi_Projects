@@ -28,4 +28,4 @@ class Reservation(models.Model):
     end_time = models.DateTimeField()
 
     def __str__(self):
-        return Hotel.hotel_name+' for--> '+Customer.customer_name
+        return  self.customer.customer_name +"---Reserver on --->"+self.hotel.hotel_name 
