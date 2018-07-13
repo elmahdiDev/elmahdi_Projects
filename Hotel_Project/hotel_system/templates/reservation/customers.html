@@ -8,7 +8,7 @@ Customers
 <h3 style="border:0.5px rgb(240, 73, 73) solid; color: rgb(232, 88, 44);width: 464px;text-align: center">Our Customers</h3>
 <table class="table table-striped">
         <thead>
-          <tr style="width:500px;height:auto;background-color:rgb(236, 143, 22);border-top: rgb(240, 73, 73) 0.5px solid;border-bottom: rgb(240, 73, 73) 2px solid;border-radius:15px;font-size:20px;">
+          <tr style="width:500px;height:auto;background-color:rgb(255, 109, 19);border-top: rgb(240, 73, 73) 0.5px solid;border-bottom: rgb(240, 73, 73) 2px solid;border-radius:15px;font-size:20px;">
             <th style="padding-left: 205px;padding-right: 205px;">Name</th>
           </tr>
         </thead>
@@ -22,4 +22,13 @@ Customers
           
         </tbody>
       </table>
+{% endblock %}
+{% block recent %}
+<h3>Recent Registred Customers</h3>
+{% for cus in recentcustomers %}
+<div style="padding-top:10px;padding-bottom:10px;display:inline-block;border-bottom: 0.5px #b68039 solid">
+  <img src="http://www.iconsplace.com/icons/preview/ffb000/user-256.png" width="40px" style="padding: 0px;float: left;width: 15%;">
+  <p style="padding-left:12px;text-align:left;float: left;width: 80%;font-weight: bold;color:rgb(191, 185, 17);">{{cus.customer_name}}</p>
+</div>
+{% endfor %}
 {% endblock %}

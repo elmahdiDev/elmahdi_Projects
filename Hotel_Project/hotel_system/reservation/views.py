@@ -8,33 +8,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 
+
 def AllHotels(request):
-    # allhotels = '<ul style="width:auto;height:auto;background-color:lightgrey;borber-radius:6px;font-size:20px;padding:30px;">'
-    # for hotel in Hotel.objects.all():
-    #     allhotels += '<li>'+hotel.hotel_name+'</li>'
-    # allhotels += '</ul>'
-    # return HttpResponse(allhotels)
-    return render(request,"reservation/hotels.html",{"hotels":Hotel.objects.all()})
-
-
-# def HotelInCity(request):
-#     hotelincity = '<ul style="width:auto;height:auto;background-color:lightgrey;borber-radius:6px;font-size:20px;padding:30px;">'
-#     for hotel in Hotel.objects.all():
-#         if hotel.hotel_city == 'casa':
-#             hotelincity += '<li>'+hotel.hotel_name+'</li>'
-#     hotelincity += "</ul>"
-#     return HttpResponse(hotelincity)
+    return render(request,"reservation/hotels.html",{"hotels":Hotel.objects.all(),'recenthotels':Hotel.objects.filter().order_by("-id")[:5]})
 
 def AllCustomers(request):
-    return render(request,"reservation/customers.html",{'customers':Customer.objects.all()})
+    return render(request,"reservation/customers.html",{'customers':Customer.objects.all(),'recentcustomers': Customer.objects.filter().order_by("-id")[:5]})
 
 def AllReservations(request):
-    # reservationlist = '<ul style="width:auto;height:auto;background-color:lightgrey;borber-radius:6px;font-size:20px;padding:30px;">'
-    # for r in Reservation.objects.all():
-    #     reservationlist += '<li>'+'The Customer : '+str(r.customer)+' Reserved on : '+str(r.hotel)+'</li>'
-    # reservationlist += '</ul>'
-    # return HttpResponse(reservationlist)
-    return render(request,"reservation/reservations.html",{'reservations':Reservation.objects.all()})
-
-def RecentReservations(request):
-    return render(request, "reservation/reservations.html",{'recentreservation': Reservation.objects.all().reverse()[:5]})
+    return render(request,"reservation/reservations.html",{'reservations':Reservation.objects.all(),'recentreservation': Reservation.objects.filter().order_by("-id")[:5]})
