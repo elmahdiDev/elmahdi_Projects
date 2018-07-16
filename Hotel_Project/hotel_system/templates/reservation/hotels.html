@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 
-{% block script %}
-{% endblock %}
+
 
 {% block title %}
 Hotels
@@ -32,6 +31,20 @@ Hotels
           
         </tbody>
       </table>
+{% verbatim %}
+<h3>Angular Data</h3>
+<div ng-app="hotelreservation.angapp">
+  <div ng-controller="HotelReservation">
+    <ul>
+      <div ng-repeat="hotel in hotels">
+        <li>{{hotel.hotel_name}}</li>
+      </div>
+    </ul>
+    <input type="text" ng-model="new_hotel"/>
+    <button ng-click="add_new_hotel(new_hotel)">add</button>
+  </div>
+</div>     
+{% endverbatim %}
 {% endblock %}
 
 {% block recent %}
