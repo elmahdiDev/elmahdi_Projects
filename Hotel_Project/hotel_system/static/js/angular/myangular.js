@@ -5,7 +5,7 @@
   
   function HotelReservation($scope,$http) {
     $scope.hotels=[];
-    $http.get("/reservation/hotelsapi")
+    $http.get("/reservation/hotelsapi/")
     .then(function(response){
       $scope.hotels = response.data;
     });
