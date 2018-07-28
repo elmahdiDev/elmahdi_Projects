@@ -9,28 +9,7 @@ Hotels
 
 {% block content %}
 <h3 style="border:0.5px rgb(240, 73, 73) solid; color: rgb(232, 88, 44);width: 500px;text-align: center">Available Hotels</h3>
-<table class="table table-striped">
-        <thead>
-          <tr style="width:500px;height:auto;background-color:rgb(255, 109, 19);border-top:rgb(240, 73, 73) 0.5px solid;border-bottom:rgb(240, 73, 73) 2px solid;border-radius:15px;font-size:18px;padding:20px;">
-            <th style="padding: 20px;">Name</th>
-            <th style="padding: 20px;">City</th>
-            <th style="padding: 20px;">Total rooms</th>
-            <th style="padding: 20px;">Empty rooms</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            {% for hotel in hotels %}
-            <tr style="width:auto;height:auto;background-color:rgb(240, 182, 107);font-size:15px;">
-              <td style="padding: 20px;border-top: rgb(240, 73, 73) 0.5px solid;border-bottom: rgb(240, 73, 73) 0.5px solid;"> {{hotel.hotel_name}} </td>
-              <td style="padding: 20px;border-top: rgb(240, 73, 73) 0.5px solid;border-bottom: rgb(240, 73, 73) 0.5px solid;"> {{hotel.hotel_city}} </td>
-              <td style="border-top: rgb(240, 73, 73) 0.5px solid;border-bottom: rgb(240, 73, 73) 0.5px solid;padding-left: 46px;"> {{hotel.total_rooms}} </td>
-              <td style="border-top: rgb(240, 73, 73) 0.5px solid;border-bottom: rgb(240, 73, 73) 0.5px solid;padding-left: 46px;"> {{hotel.empty_rooms}}</td>
-            </tr>
-            {% endfor %}
-          
-        </tbody>
-      </table>
+
 {% verbatim %}
 <h3>Angular Data</h3>
 
