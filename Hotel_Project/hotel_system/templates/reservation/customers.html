@@ -6,22 +6,20 @@ Customers
 
 {% block content %}
 <h3 style="border:0.5px rgb(240, 73, 73) solid; color: rgb(232, 88, 44);width: 464px;text-align: center">Our Customers</h3>
-<table class="table table-striped">
-        <thead>
-          <tr style="width:500px;height:auto;background-color:rgb(255, 109, 19);border-top: rgb(240, 73, 73) 0.5px solid;border-bottom: rgb(240, 73, 73) 2px solid;border-radius:15px;font-size:20px;">
-            <th style="padding-left: 205px;padding-right: 205px;">Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            {% for cus in customers %}
-            <tr style="width:auto;height:auto;background-color:rgb(240, 182, 107);font-size:20px;">
-              <td style="padding-top:5px;padding-bottom:5px;border-top: rgb(240, 73, 73) 0.5px solid;border-bottom: rgb(240, 73, 73) 0.5px solid;text-align: center;"> {{cus.customer_name}} </td>
-            </tr>
-            {% endfor %}
-          
-        </tbody>
-      </table>
+{% verbatim %}
+<h3>Angular Data</h3>
+
+<div ng-controller="Customers">
+  <ul>
+    <div ng-repeat="customer in customers">
+      <li>{{customer.customer_name}}</li>
+    </div>
+  </ul>
+  <input type="text" placeholder="name" ng-model="new_customer"/>
+  <button ng-click="add_new_customer(new_customer)">add</button>
+</div>
+  
+{% endverbatim %}
 {% endblock %}
 {% block recent %}
 <h3>Recent Registred Customers</h3>
