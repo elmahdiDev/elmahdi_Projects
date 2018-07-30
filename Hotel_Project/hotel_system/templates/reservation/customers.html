@@ -24,9 +24,9 @@ Customers
 {% block recent %}
 <h3>Recent Registred Customers</h3>
 {% for cus in recentcustomers %}
-<div style="padding-top:10px;padding-bottom:10px;display:inline-block;border-bottom: 0.5px #b68039 solid">
-  <img src="http://www.iconsplace.com/icons/preview/ffb000/user-256.png" width="40px" style="padding: 0px;float: left;width: 15%;">
-  <p style="padding-left:12px;text-align:left;float: left;width: 80%;font-weight: bold;color:rgb(191, 185, 17);">{{cus.customer_name}}</p>
+<div style="padding-top:5px;display:inline-block;border-bottom: 0.5px #b6a339 solid;width: 100%;">
+  <img src="../../static/images/dossier.png"  style="padding: 0px;padding-top:6px;float: left;width: 10%;">
+  <p style="float:left;padding-left: 7px;font-weight:bold;color:rgb(191,185,17);">{{cus.customer_name}}</p>
 </div>
 {% endfor %}
 {% endblock %}

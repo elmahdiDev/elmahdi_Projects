@@ -12,7 +12,7 @@ Reservation
 <div ng-controller="Reservations">
   <ul>
     <div ng-repeat="res in reservations">
-      <li>{{res.customer}} reserved on  {{res.hotel}} from {{res.starttime}}  to {{endtime}}</li>
+      <li>{{res.customer}} reserved on  {{res.hotel}} from {{res.start_time}}  to {{res.end_time}}</li>
     </div>
   </ul>
   <input type="text" placeholder="your name" ng-model="res_customer"/>
@@ -21,7 +21,7 @@ Reservation
   <input type="text" placeholder="start time" ng-model="res_starttime"/>
   <input type="text" placeholder="end time" ng-model="res_endtime"/>
 
-  <button ng-click="add_new_customer(res_hotel,res_customer,res_starttime,res_endtime)">add</button>
+  <button ng-click="add_new_reservation(res_hotel,res_customer,res_starttime,res_endtime)">add</button>
 </div>
   
 {% endverbatim %}
@@ -30,9 +30,9 @@ Reservation
 {% block recent%}
 <h3>Recent Reservations</h3>
 {% for res in recentreservation %}
-<div style="padding-top:10px;padding-bottom:10px;display:inline-block;border-bottom: 0.5px #b68039 solid">
-  <img src="http://www.iconsplace.com/icons/preview/ffb000/user-256.png" width="40px" style="padding: 0px;float: left;width: 15%;">
-  <p style="padding-left:7px;text-align:left;float: left;width: 80%;font-weight: bold;color:rgb(191, 185, 17)">{{res.customer}} reserved in {{res.hotel}}</p>
+<div style="padding-top:5px;display:inline-block;border-bottom: 0.5px #b6a339 solid;width: 100%;">
+  <img src="../../static/images/dossier.png"  style="padding: 0px;padding-top:6px;float: left;width: 10%;">
+  <p style="float:left;padding-left: 7px;font-weight:bold;color:rgb(191,185,17);">{{res.customer}} reserved in {{res.hotel}}</p>
 </div>
       
 {% endfor %}

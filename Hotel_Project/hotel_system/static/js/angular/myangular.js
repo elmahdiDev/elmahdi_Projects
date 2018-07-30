@@ -7,15 +7,34 @@
 
   
   function HotelReservation($scope,$http) {
-    $scope.hotels=[];
-    $http.get("/reservation/hotelsapi/")
-    .then(function(response){
-      $scope.hotels = response.data;
-    });
-    $scope.add_new_hotel=function(new_hotel) {
-      var hotel={hotel_name:new_hotel,hotel_city:'city not defined'};
-      $scope.hotels.push(hotel);
+    reload_data();
+    function reload_data(){
+      $scope.hotels=[];
+      $http.get("/reservation/hotelsapi/")
+      .then(function(response){
+        $scope.hotels = response.data;
+      });
+    }
+
+    $scope.delete_hotel=function(id){
+      $http.delete("/reservation/hotelsapi/"+id+"/")
+      .then(function(){
+        reload_data();
+      }, function(){
+        alert('error  while deleting the hotel')
+      });
+    }
+   
+    $scope.add_new_hotel=function(hotelname,city,totalrooms,emptyrooms) {
+      var hotel={hotel_name:hotelname,hotel_city:city,total_rooms:totalrooms,empty_rooms:emptyrooms};
+      $http.post("/reservation/hotelsapi/",hotel)
+      .then(function(response){
+        $scope.hotels.push(hotel);
+      },function(){//Error
+        alert('error while adding hotel');
+      });
     };
+   
   }
 
 
@@ -41,8 +60,8 @@ function Reservations($scope,$http) {
   .then(function(response){
     $scope.reservations = response.data;
   });
-  $scope.add_new_reservation=function(hotelname,customername,start_time,end_time) {
-    var reservation={hotel:hotelname,customer:customername,starttime:start_time,endtime:end_time};
+  $scope.add_new_reservation=function(hotelname,customername,starttime,endtime) {
+    var reservation={hotel:hotelname,customer:customername,start_time:starttime,end_time:endtime};
     $scope.reservations.push(reservation);
   };
 }

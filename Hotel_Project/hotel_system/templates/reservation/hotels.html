@@ -8,19 +8,25 @@ Hotels
 {% endblock %}
 
 {% block content %}
-<h3 style="border:0.5px rgb(240, 73, 73) solid; color: rgb(232, 88, 44);width: 500px;text-align: center">Available Hotels</h3>
+<h3 style="color: rgb(232, 88, 44);width: 500px;text-align: center">Available Hotels with angular</h3>
 
 {% verbatim %}
-<h3>Angular Data</h3>
+
 
 <div ng-controller="HotelReservation">
-  <ul>
-    <div ng-repeat="hotel in hotels">
-      <li>{{hotel.hotel_name}}</li>
-    </div>
+  <ul style="display:inline-block;">
+    <div ng-repeat="hotel in hotels" style="width: 500px;">
+      <div>
+        <li style="padding: 3px;border-bottom: 0.5px solid rgb(24, 197, 24);width: 474px;float: left;list-style: none">{{hotel.hotel_name}}</li><button ng-click="delete_hotel(hotel.id)" style="padding:0px;margin:0px;margin-top: 3.5px;height: 25px;float: left;with:10px;">X</button>
+      </div>  
+    </div> 
   </ul>
-  <input type="text" ng-model="new_hotel"/>
-  <button ng-click="add_new_hotel(new_hotel)">add</button>
+  <input type="text" placeholder="hotel name" ng-model="hotelname"/>
+  <input type="text" placeholder="hotel city" ng-model="hotelcity"/>
+  <input type="text" placeholder="total rooms" ng-model="totalrooms"/>
+  <input type="text" placeholder="empty rooms" ng-model="emptyrooms"/>
+
+  <button ng-click="add_new_hotel(hotelname,hotelcity,totalrooms,emptyrooms)">add</button>
 </div>
   
 {% endverbatim %}
@@ -29,9 +35,9 @@ Hotels
 {% block recent %}
 <h3>Most New Hotels</h3>
 {% for h in recenthotels %}
-<div style="padding-top:10px;padding-bottom:10px;display:inline-block;border-bottom: 0.5px #b68039 solid">
-  <img src="http://www.iconsplace.com/icons/preview/ffb000/user-256.png" width="40px" style="padding: 0px;float: left;width: 15%;">
-  <p style="padding-left:12px;text-align:left;float: left;width: 80%;font-weight: bold;color:rgb(191, 185, 17)">{{h.hotel_name}}</p>
+<div style="padding-top:5px;display:inline-block;border-bottom: 0.5px #b6a339 solid;width: 100%;">
+  <img src="../../static/images/dossier.png"  style="padding: 0px;padding-top:6px;float: left;width: 10%;">
+  <p style="float:left;padding-left: 7px;font-weight:bold;color:rgb(191,185,17);">{{h.hotel_name}}</p>
 </div>
 {% endfor %}
 {% endblock %}
