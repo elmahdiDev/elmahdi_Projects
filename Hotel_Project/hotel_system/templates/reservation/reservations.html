@@ -5,23 +5,22 @@ Reservation
 {% endblock %}
 
 {% block content %}
-<h3 style="padding-left:60px;padding-right:60px;border:0.5px rgb(240, 73, 73) solid; color: rgb(232, 88, 44);width: 464px;text-align: center">List of reservations</h3>
+<h3 style="padding-left:60px;padding-right:60px;color: rgb(232, 88, 44);width: 464px;text-align: center">List of reservations</h3>
 {% verbatim %}
-<h3>Angular Data</h3>
+
 
 <div ng-controller="Reservations">
-  <ul>
+  <ul style="display:inline-block;">
     <div ng-repeat="res in reservations">
-      <li>{{res.customer}} reserved on  {{res.hotel}} from {{res.start_time}}  to {{res.end_time}}</li>
+      <li style="padding: 3px;border-bottom: 0.5px solid rgb(24, 197, 24);width: 440px;float: left;list-style: none">{{res.customer}} reserved on  {{res.hotel}} from {{res.start_time}}  to {{res.end_time}}</li><button ng-click="delete_customer(customer.id)" style="padding:0px;margin:0px;margin-top: 3.5px;height: 25px;float: left;margin-right: 4px;">X</button><button ng-click="update_reservation(res.id,res_hotel,res_customer)" style="padding:0px;margin:0px;margin-top: 3.5px;height: 25px;float: left;">Edit</button>
     </div>
   </ul>
   <input type="text" placeholder="your name" ng-model="res_customer"/>
   <input type="text" placeholder="hotel name" ng-model="res_hotel"/>
-  <p>for start time and end time it should be like that:  2018-07-09T00:00:00Z this another example  2018-08-01T10:22:02Z /  year-month-dayThour-minute-secondZ</p>
-  <input type="text" placeholder="start time" ng-model="res_starttime"/>
-  <input type="text" placeholder="end time" ng-model="res_endtime"/>
+  
+ 
 
-  <button ng-click="add_new_reservation(res_hotel,res_customer,res_starttime,res_endtime)">add</button>
+  <button ng-click="add_new_reservation(res_hotel,res_customer)">add</button>
 </div>
   
 {% endverbatim %}

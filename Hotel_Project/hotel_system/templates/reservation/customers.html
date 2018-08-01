@@ -5,14 +5,16 @@ Customers
 {% endblock %}
 
 {% block content %}
-<h3 style="border:0.5px rgb(240, 73, 73) solid; color: rgb(232, 88, 44);width: 464px;text-align: center">Our Customers</h3>
+<h3 style="color: rgb(232, 88, 44);width: 464px;text-align: center">Our Customers</h3>
 {% verbatim %}
-<h3>Angular Data</h3>
+
 
 <div ng-controller="Customers">
-  <ul>
+  <ul style="display:inline-block;">
     <div ng-repeat="customer in customers">
-      <li>{{customer.customer_name}}</li>
+      <div>
+        <li style="padding: 3px;border-bottom: 0.5px solid rgb(24, 197, 24);width: 440px;float: left;list-style: none">{{customer.customer_name}}</li><button ng-click="delete_customer(customer.id)" style="padding:0px;margin:0px;margin-top: 3.5px;height: 25px;float: left;margin-right: 4px;">X</button><button ng-click="update_customer(customer.id,new_customer)" style="padding:0px;margin:0px;margin-top: 3.5px;height: 25px;float: left;">Edit</button>
+      </div>
     </div>
   </ul>
   <input type="text" placeholder="name" ng-model="new_customer"/>
